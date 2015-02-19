@@ -7,7 +7,7 @@ function catModel(){
   };
 
   this.move = function(top, left){
-    $cat.animate({
+    $cat.css({
       top: top + 'px',
       left: left + 'px'
     });
