@@ -1,17 +1,23 @@
+body {
+  overflow: hidden;
+}
+
 #container {
   background-color: rgba(255, 245, 220, 1);
   position: absolute;
   height: 80%;
   width: 80%;
   left: 10%;
-  top: 10%
+  top: 10%;
   border: black solid 1px;
+  overflow: hidden;
+  cursor: none;
 }
 
 .cat {
-  height: 20px;
-  width: 20px;
-  border-radius: 50%;
-  background-color: red;
+  height: 120px;
+  width: 200px;
+  margin: -60px 0 0 -100px;
   position: absolute;
+  background-image: url(../images/cat.gif);
 }
