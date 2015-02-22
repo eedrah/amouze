@@ -12,10 +12,14 @@ function mouseModel(){
 	};
 
 	function disappear(){
+		var centerWidth = $mouse.width() / 2;
+		var centerHeight = $mouse.height() / 2;
 		$mouse.animate({
 			height: 0,
-			width: 0
-		}, destroy);
+			width: 0,
+			marginLeft: centerWidth,
+			marginTop: centerHeight
+		}, 'fast', destroy);
 	};
 
 	function destroy(){
