@@ -30,5 +30,6 @@ body {
   height: 100px;
   width: 100px;
   position: absolute;
-  background-image: url(../images/mouse.gif);
+  background-image: url(../images/mouse.png);
+  background-size: contain;
 }
