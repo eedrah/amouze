@@ -21,3 +21,10 @@ body {
   position: absolute;
   background-image: url(../images/cat.gif);
 }
+
+.mouse {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  background-image: url(../images/mouse.gif);
+}
