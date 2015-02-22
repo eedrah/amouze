@@ -1,7 +1,12 @@
 $(startListening);
 
 function startListening(){
-  $('#container').one('mouseover', function(){
-    new catController();
-  });
+	trackCat();
+	(new mouseController).startPlacingMice();
+};
+
+function trackCat(){
+	$('#container').one('mouseover', function(){
+    	new catController();
+	});
 };

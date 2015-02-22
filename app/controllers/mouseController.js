@@ -1,12 +1,15 @@
 function mouseController(){
-	var model;
-	var view;
+	var view = new mouseView();
+	var mouseSpawnTime = 1000;
 
-	this.placeNewMouse = function(){
-		model = new mouseModel();
-		view = new mouseView();
+	this.startPlacingMice = function(){
+		setInterval(placeNewMouse, mouseSpawnTime);
+	};
+
+	function placeNewMouse(){
+		var model = new mouseModel();
 		var $mouse = model.create();
 		view.positionRandomly($mouse);
-	}
+	};
 };
 
