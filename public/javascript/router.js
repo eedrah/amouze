@@ -21,6 +21,7 @@ function startUpdatingStatistics(){
     setInterval(function(){
         updateTimer();
         updateWildMice();
+        updateMicePerSecond();
     });
 
     function updateTimer(){
@@ -32,4 +33,21 @@ function startUpdatingStatistics(){
     function updateWildMice(){
         $('#wildMice').text($('.mouse').length);
     };
+
+    function updateMicePerSecond(){
+        $('#micePerSecond').text(
+            (
+                $('#caughtMice').text() / $('#totalTime').text()
+            ).toFixed(3)
+        );
+    };
 };
+
+// This is a terrible way to do it
+// Refactor into one controller
+    // statistics model
+    // cat model
+    // mouse model
+    // one view?
+// Want score/amouzement to be (caught)/(totalTimeAlive + uncaught^2)
+// Delete mouse per second
