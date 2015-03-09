@@ -2,10 +2,12 @@ $(startListening);
 
 function startListening(){
 	$('#container').one('mouseover', function(){
-        startUpdatingStatistics();
-    	new catController();
-        (new mouseController).startPlacingMice();
-        removeInstructions();
+        (new AmouzeController()).startHunting();
+
+        //startUpdatingStatistics();
+    	//new catController();
+        //(new mouseController).startPlacingMice();
+        //removeInstructions();
 	});
 };
 

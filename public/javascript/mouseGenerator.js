@@ -1,0 +1,6 @@
+function MouseGenerator(){
+};
+
+MouseGenerator.prototype = {
+    
+}
