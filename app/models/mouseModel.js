@@ -1,7 +1,9 @@
 function mouseModel(){
 	var $mouse;
+	var _callbackOnDestroy;
 
-	this.create = function(){
+	this.create = function(callbackOnDestroy){
+		_callbackOnDestroy = callbackOnDestroy;
 		$mouse = $('<div/>').addClass('mouse');
 		this.disappearOnMouseover();
 		return $mouse;
@@ -24,6 +26,7 @@ function mouseModel(){
 
 	function destroy(){
 		$mouse.remove();
+		_callbackOnDestroy();
 	};
 };
 
