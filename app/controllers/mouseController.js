@@ -8,7 +8,7 @@ function mouseController(){
 
 	function placeNewMouse(){
 		var model = new mouseModel();
-		var $mouse = model.create();
+		var $mouse = model.create(view.incrementCaughtCounter);
 		view.positionRandomly($mouse);
 	};
 };
