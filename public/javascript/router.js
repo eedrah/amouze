@@ -22,12 +22,11 @@ function startUpdatingStatistics(){
 };
 
 function startTimer(updateInterval){
-    var updateInterval = 30;
-    var intervalSeconds = updateInterval / 1000;
-    var time = 0;
+    var start = Date.now();
     setInterval(function(){
-        time += intervalSeconds;
-        $('#totalTime').text(time.toFixed(2));
+        $('#totalTime').text(
+            ((Date.now() - start) / 1000).toFixed(2)
+            );
     }, updateInterval);
 };
 
