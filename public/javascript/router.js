@@ -17,21 +17,19 @@ function removeInstructions(){
 
 function startUpdatingStatistics(){
     var updateInterval = 30;
-    startTimer(updateInterval);
-    startCountingWildMice(updateInterval);
-};
-
-function startTimer(updateInterval){
-    var start = Date.now();
+    var startTime = Date.now();
     setInterval(function(){
+        updateTimer();
+        updateWildMice();
+    });
+
+    function updateTimer(){
         $('#totalTime').text(
-            ((Date.now() - start) / 1000).toFixed(2)
-            );
-    }, updateInterval);
-};
+            ((Date.now() - startTime) / 1000).toFixed(2)
+        );
+    };
 
-function startCountingWildMice(updateInterval){
-    setInterval(function(){
+    function updateWildMice(){
         $('#wildMice').text($('.mouse').length);
-    }, updateInterval);
+    };
 };
