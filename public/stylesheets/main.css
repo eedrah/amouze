@@ -44,3 +44,31 @@ body {
   top: 50%;
   transform: translateY(-50%);
 }
+
+#statistics {
+  margin: 5px;
+  padding: 0;
+  position: absolute;
+  right: 0;
+  list-style: none;
+}
+
+#statistics li {
+  text-align: right;
+}
+
+#totalTime:before{
+  content: "Total time: ";
+}
+
+#wildMice:before{
+  content: "Wild mice: ";
+}
+
+#caughtMice:before{
+  content: "Caught mice: ";
+}
+
+#micePerSecond:before{
+  content: "Mice per second: ";
+}
