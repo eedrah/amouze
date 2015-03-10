@@ -57,18 +57,18 @@ body {
   text-align: right;
 }
 
-#totalTime:before{
-  content: "Total time: ";
+#totalSeconds:before{
+  content: "Time: ";
 }
 
 #wildMice:before{
-  content: "Wild mice: ";
+  content: "Wild: ";
 }
 
 #caughtMice:before{
-  content: "Caught mice: ";
+  content: "Caught: ";
 }
 
-#micePerSecond:before{
-  content: "Mice per second: ";
+#score:before{
+  content: "Amouzement: ";
 }

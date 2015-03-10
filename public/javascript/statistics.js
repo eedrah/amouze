@@ -13,24 +13,24 @@ Statistics.prototype = {
         this._totalMouseAliveTime += Date.now() - birthTime;
     },
     update: function(){
-        this.totalTime = Date.now() - this._startTime;
-        if(this.totalTime > this._totalMice * 1000){
+        this._totalTime = Date.now() - this._startTime;
+        if(this._totalTime > this._totalMice * 1000){
             this._mouseGenerator.addMouse(this.registerCaughtMouse);
             this._totalMice += 1;
         };
     },
     getWildMice: function(){
-        return this._totalMice - this.caughtMice;
+        return this._totalMice - this._caughtMice;
     },
     getTotalSeconds: function(){
         return this._totalTime / 1000;
     },
     getCaughtMice: function(){
-        return this.caughtMice;
+        return this._caughtMice;
     },
     getScore: function(){
-        return this.caughtMice / (
-            this._totalMouseAliveTime + Math.pow(this._totalMice - this.caughtMice, 2)
+        return this._caughtMice / (
+            this._totalMouseAliveTime + Math.pow(this._totalMice - this._caughtMice, 2)
         );
     },
     setMouseGenerator: function(mouseGenerator){
