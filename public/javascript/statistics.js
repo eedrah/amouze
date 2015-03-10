@@ -3,14 +3,14 @@ function Statistics(){
     // this._mouseGenerator;
     // this._startTime;
     this._totalMice = 0;
-    this._totalMouseAliveTime = 0;
+    this._totalMouseAliveSeconds = 0.000001;  // Initialize to small number to save checking for NaNs each loop
     // this._totalTime;
 };
 
 Statistics.prototype = {
     registerCaughtMouse: function(birthTime){
         this._caughtMice += 1;
-        this._totalMouseAliveTime += Date.now() - birthTime;
+        this._totalMouseAliveSeconds += (Date.now() - birthTime) / 1000;
     },
     update: function(){
         this._totalTime = Date.now() - this._startTime;
@@ -30,7 +30,7 @@ Statistics.prototype = {
     },
     getScore: function(){
         return this._caughtMice / (
-            this._totalMouseAliveTime + Math.pow(this._totalMice - this._caughtMice, 2)
+            this._totalMouseAliveSeconds + Math.pow(this._totalMice - this._caughtMice, 2)
         );
     },
     setMouseGenerator: function(mouseGenerator){
