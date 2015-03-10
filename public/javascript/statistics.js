@@ -1,6 +1,6 @@
 function Statistics(){
     this._caughtMice = 0;
-    // this._mouseGenerator;
+    // this._mouseDisplayer;
     // this._startTime;
     this._totalMice = 0;
     this._totalMouseAliveSeconds = 0.000001;  // Initialize to small number to save checking for NaNs each loop
@@ -15,9 +15,18 @@ Statistics.prototype = {
     update: function(){
         this._totalTime = Date.now() - this._startTime;
         if(this._totalTime >= (this._totalMice + 1) * 1000){
-            this._mouseGenerator.addMouse(this.registerCaughtMouse);
-            this._totalMice += 1;
+            this._createMouse();
         };
+    },
+    _createMouse: function(){
+        var mouse = new Mouse();
+        mouse.create();
+        mouse.setFnWhenCaught = this.registerCaughtMouse;
+        this._mouseDisplayer(mouse);
+        this._totalMice += 1;
+    },
+    setMouseDisplayer: function(fnMouseDisplayer){
+        this._mouseDisplayer = fnMouseDisplayer;
     },
     getWildMice: function(){
         return this._totalMice - this._caughtMice;
@@ -32,9 +41,6 @@ Statistics.prototype = {
         return this._caughtMice / (
             this._totalMouseAliveSeconds + Math.pow(this._totalMice - this._caughtMice, 2)
         );
-    },
-    setMouseGenerator: function(mouseGenerator){
-        this._mouseGenerator = mouseGenerator;
     },
     initialize: function(){
         this._startTime = Date.now();

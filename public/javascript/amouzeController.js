@@ -2,7 +2,6 @@ function AmouzeController(){
     this.loopTime = 50;
 
     this._statistics = new Statistics();
-    this._mouseGenerator = new MouseGenerator();
     this._cat = new Cat();
     this._view = new View();
 };
@@ -14,7 +13,7 @@ AmouzeController.prototype = {
     },
     startLoop: function(){
         this._statistics.initialize();
-        this._statistics.setMouseGenerator(this._mouseGenerator);
+        this._statistics.setMouseDisplayer(this._view.renderMouse);
         setInterval(this.computeLoop.bind(this), this.loopTime);
     },
     startCat: function(){
