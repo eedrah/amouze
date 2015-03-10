@@ -9,4 +9,7 @@ View.prototype = {
     getContainer: function(){
         return this.$container;
     },
+    updateStatistics: function(){
+        console.log("updatedStats");
+    },
 };
