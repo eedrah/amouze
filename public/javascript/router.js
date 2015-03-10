@@ -1,14 +1,14 @@
-$(startListening);
+$(bindEvents);
 
-function startListening(){
-	$('#container').one('mouseover', function(){
-        (new AmouzeController()).startHunting();
-
-        //startUpdatingStatistics();
-    	//new catController();
-        //(new mouseController).startPlacingMice();
-        //removeInstructions();
-	});
+function bindEvents(){
+    var controller = new AmouzeController();
+    var $container = $('#container');
+    $container.one('mouseover', function(){
+        controller.mouseover();
+    });
+    $container.on('mousemove', function(event){
+        controller.mousemove(event);
+    });
 };
 
 function removeInstructions(){

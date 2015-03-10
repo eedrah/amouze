@@ -1,8 +1,12 @@
 function View(){
+    this.$container = $('#container');
 };
 
 View.prototype = {
-    startHunting: function(){
-        console.log('view starthunting');
-    }
+    renderCat: function(cat){
+        this.$container.append(cat.$cat);
+    },
+    getContainer: function(){
+        return this.$container;
+    },
 };
