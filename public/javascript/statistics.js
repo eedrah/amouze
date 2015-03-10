@@ -14,7 +14,7 @@ Statistics.prototype = {
     },
     update: function(){
         this._totalTime = Date.now() - this._startTime;
-        if(this._totalTime > this._totalMice * 1000){
+        if(this._totalTime >= (this._totalMice + 1) * 1000){
             this._mouseGenerator.addMouse(this.registerCaughtMouse);
             this._totalMice += 1;
         };
