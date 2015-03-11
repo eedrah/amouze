@@ -1,5 +1,5 @@
 function AmouzeController(){
-    this.loopTime = 50;
+    this.loopTime = 30;
 
     this._statistics = new Statistics();
     this._cat = new Cat();
