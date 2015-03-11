@@ -28,4 +28,16 @@ AmouzeController.prototype = {
         this.startCat();
         this.startLoop();
     },
+    toggleMusic: function(event){
+        var $image = $(this).find('i');
+        $image.toggleClass('fa-volume-up');
+        $image.toggleClass('fa-volume-off');
+
+        var audio = $(this).find('audio')[0];
+        if(audio.paused){
+            audio.play();
+        } else {
+            audio.pause();
+        };
+    },
 };
