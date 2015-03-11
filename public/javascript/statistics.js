@@ -21,12 +21,12 @@ Statistics.prototype = {
     _createMouse: function(){
         var mouse = new Mouse();
         mouse.create();
-        mouse.setFnWhenCaught = this.registerCaughtMouse;
-        this._mouseDisplayer(mouse);
+        mouse.setFnWhenCaught(this.registerCaughtMouse.bind(this));
+        this._mouseDisplayer.renderMouse(mouse);
         this._totalMice += 1;
     },
-    setMouseDisplayer: function(fnMouseDisplayer){
-        this._mouseDisplayer = fnMouseDisplayer;
+    setMouseDisplayer: function(view){
+        this._mouseDisplayer = view;
     },
     getWildMice: function(){
         return this._totalMice - this._caughtMice;

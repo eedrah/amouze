@@ -23,10 +23,10 @@ View.prototype = {
     renderMouse: function(mouse){
         this._positionRandomly(mouse.$mouse);
         this._$container.append(mouse.$mouse);
-    }.bind(this),
+    },
     _positionRandomly: function($element){
-        var containerHeight = this.$container.height();
-        var containerWidth = this.$container.width();
+        var containerHeight = this._$container.height();
+        var containerWidth = this._$container.width();
         var elementHeight = $element.height();
         var elementWidth = $element.width();
         var top = Math.floor(Math.random() * (containerHeight - elementHeight));

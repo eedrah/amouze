@@ -15,7 +15,7 @@ Mouse.prototype = {
         this._fnWhenCaught = fnWhenCaught;
     },
     disappearOnMouseover: function(){
-        this.$mouse.mouseover(this.disappear);
+        this.$mouse.mouseover(this.disappear.bind(this));
     },
     disappear: function(){
         var centerWidth = this.$mouse.width() / 2;
@@ -25,10 +25,10 @@ Mouse.prototype = {
             width: 0,
             marginLeft: centerWidth,
             marginTop: centerHeight
-        }, 'fast', this.destroy);
-    }.bind(this),
+        }, 'fast', this.destroy.bind(this));
+    },
     destroy: function(){
         this.$mouse.remove();
         this._fnWhenCaught(this._birthTime);
-    }.bind(this),
+    },
 }

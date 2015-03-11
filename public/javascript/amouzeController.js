@@ -13,7 +13,7 @@ AmouzeController.prototype = {
     },
     startLoop: function(){
         this._statistics.initialize();
-        this._statistics.setMouseDisplayer(this._view.renderMouse);
+        this._statistics.setMouseDisplayer(this._view);
         setInterval(this.computeLoop.bind(this), this.loopTime);
     },
     startCat: function(){
