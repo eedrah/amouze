@@ -38,8 +38,8 @@ Statistics.prototype = {
         return this._caughtMice;
     },
     getScore: function(){
-        return this._caughtMice / (
-            this._totalMouseAliveSeconds + Math.pow(this._totalMice - this._caughtMice, 2)
+        return 100 * this._caughtMice / (
+            this._totalMouseAliveSeconds + Math.pow(this.getTotalSeconds() - this._caughtMice, 2)
         );
     },
     initialize: function(){
