@@ -21,8 +21,8 @@ View.prototype = {
         this._$score.text(statistics.getScore().toFixed(2));
     },
     renderMouse: function(mouse){
-        this._positionRandomly(mouse.$mouse);
         this._$container.append(mouse.$mouse);
+        this._positionRandomly(mouse.$mouse);
     },
     _positionRandomly: function($element){
         var containerHeight = this._$container.height();
