@@ -24,6 +24,7 @@ AmouzeController.prototype = {
         this._cat.moveTo(event.pageX, event.pageY);
     },
     mouseover: function(event){
+        this._view.removeInstructions();
         this.startCat();
         this.startLoop();
     },

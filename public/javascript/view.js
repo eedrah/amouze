@@ -36,4 +36,9 @@ View.prototype = {
             left: left,
         });
     },
+    removeInstructions: function(){
+        this._$instructions.fadeOut(function(){
+            $(this).remove();
+        });
+    },
 };
