@@ -69,3 +69,11 @@ body {
 #score:before{
   content: "Amouzement: ";
 }
+
+#musicButton {
+  position: absolute;
+  padding-left: 10px;
+  z-index: 1;
+  font-size: 2em;
+  cursor: pointer;
+}

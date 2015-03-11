@@ -9,4 +9,6 @@ function bindEvents(){
     $container.on('mousemove', function(event){
         controller.mousemove(event);
     });
+
+    $('#musicButton').on('click', controller.toggleMusic);
 };
